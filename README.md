@@ -1,4 +1,4 @@
-# 🎯 Projeto de Cálculos Matemáticos em Java
+# Projeto de Cálculos Matemáticos em Java
 
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/)
 [![Swing](https://img.shields.io/badge/Swing-UI-blue?style=for-the-badge)]()
