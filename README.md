@@ -1,144 +1,102 @@
-# Projeto de Cálculos Matemáticos em Java
+# 🎯 Projeto de Cálculos Matemáticos em Java
+
+[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/)
+[![Swing](https://img.shields.io/badge/Swing-UI-blue?style=for-the-badge)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 Bem-vindo ao repositório do **Projeto de Cálculos Matemáticos em Java**!  
-Este projeto foi desenvolvido como parte da disciplina de **Programação Orientada a Objetos** do curso de **Ciência da Computação** da **Universidade do Extremo Sul Catarinense (UNESC)**.
+Desenvolvido como parte da disciplina de **Programação Orientada a Objetos** no curso de **Ciência da Computação** da **UNESC**.
 
-O objetivo é criar um programa com **interface gráfica** que realiza diversos cálculos matemáticos úteis, além de um **gerador de senhas seguras**.
-
----
-
-## Descrição do Projeto
-
-O programa oferece uma interface gráfica amigável construída com **Java Swing**, permitindo ao usuário realizar os seguintes cálculos e funcionalidades:
-
-- Aplicar desconto percentual em um valor
-- Incrementar um valor por uma porcentagem
-- Calcular quanto uma porcentagem representa de um total
-- Calcular a representação percentual de uma parte em relação ao total
-- Determinar a porcentagem de desconto
-- Calcular a variação percentual (delta)
-- Encontrar o valor original antes de um desconto
-- Regra de três simples
-- Gerador de senhas seguras com opções de caracteres
-
-Cada funcionalidade é apresentada em um **painel dedicado** na interface, com campos de entrada e resultados atualizados em tempo real.
+Este projeto oferece uma aplicação com **interface gráfica interativa** para diversos cálculos matemáticos e um **gerador de senhas seguras** — ideal para estudantes, profissionais e entusiastas da programação.
 
 ---
 
-## Tecnologias Utilizadas
+## ✨ Funcionalidades
 
-- **Linguagem de Programação:** Java
-- **Biblioteca de Interface:** Swing
+A interface, desenvolvida com **Java Swing**, é organizada em **painéis interativos**, cada um dedicado a uma funcionalidade específica:
 
-### Conceitos Aplicados
+- ✅ Aplicar desconto percentual  
+- ✅ Aumentar um valor por uma porcentagem  
+- ✅ Descobrir quanto uma porcentagem representa de um total  
+- ✅ Calcular a porcentagem que uma parte representa do todo  
+- ✅ Determinar a porcentagem de desconto entre dois valores  
+- ✅ Calcular variação percentual (delta)  
+- ✅ Estimar o valor original antes de um desconto  
+- ✅ Resolver regra de três simples  
+- ✅ Gerar senhas seguras com configurações personalizadas  
 
-- Programação Orientada a Objetos
-- Herança (`mathView` estende `JFrame`)
-- Classe utilitária estática (`mathUtils`)
-- Testes (`MathUtilsTest`)
-
----
-
-## Estrutura do Projeto
-
-O código está organizado em pacotes para facilitar a manutenção e compreensão:
-
-- `view/`: Contém a classe `mathView`, responsável pela interface gráfica.
-- `utils/`:
-  - `mathUtils`: Classe estática com as fórmulas e lógica dos cálculos.
-  - `MathUtilsTest`: Classe de testes para verificar as funcionalidades de `mathUtils`.
+Cada painel oferece campos dinâmicos e resultados **em tempo real**.
 
 ---
 
-## Classes Principais
+## 🛠️ Tecnologias e Conceitos
 
-- **`mathView`**: Constrói a interface gráfica com painéis interativos e utiliza `DocumentListener` para atualizar os cálculos em tempo real.
-- **`mathUtils`**: Implementa os métodos estáticos para os cálculos e o gerador de senhas.
-- **`MathUtilsTest`**: Contém testes manuais para validar os métodos de `mathUtils`.
+- **Java 8+**
+- **Java Swing** (interface gráfica)
+- **Programação Orientada a Objetos**
+- **Herança** (`mathView` estende `JFrame`)
+- **Classe utilitária estática** (`mathUtils`)
+- **Testes manuais** (`MathUtilsTest`)
 
 ---
 
-## Funcionalidades e Fórmulas
+## 📁 Estrutura do Projeto
 
-### 1. Aplicar Desconto Percentual
+```
+unesc-math-java-project/
+│
+├── view/
+│   └── mathView.java         # Interface gráfica principal
+│
+├── utils/
+│   ├── mathUtils.java        # Lógica dos cálculos e gerador de senhas
+│   └── MathUtilsTest.java    # Testes manuais dos métodos utilitários
+```
 
-**Fórmula:**  
-`valorFinal = valorInicial - (valorInicial * (desconto / 100))`  
-**Exemplo:**  
-`100 com 20% de desconto = 80`
+---
 
-### 2. Incrementar um Valor por uma Porcentagem
+## 📌 Fórmulas Utilizadas
 
-**Fórmula:**  
-`valorFinal = valorInicial * (1 + (aumento / 100))`  
-**Exemplo:**  
-`100 com 10% de aumento = 110`
+| Cálculo                                       | Fórmula                                                                 |
+|----------------------------------------------|-------------------------------------------------------------------------|
+| Desconto Percentual                          | `final = valor - (valor * (desc / 100))`                               |
+| Aumento Percentual                           | `final = valor * (1 + (aumento / 100))`                                |
+| Parte de um Total                            | `parte = (total * porcentagem) / 100`                                  |
+| Representação Percentual                     | `porcentagem = (parte / total) * 100`                                  |
+| Porcentagem de Desconto                      | `desc = ((original - final) / original) * 100`                         |
+| Variação Percentual                          | `delta = ((final - inicial) / inicial) * 100`                          |
+| Valor Original Antes do Desconto             | `original = final / (1 - (desc / 100))`                                |
+| Regra de Três Simples                        | `r2 = (b * r1) / a`                                                     |
+| Gerador de Senhas                            | Letras (aA), números (0-9) e símbolos, com opções personalizadas       |
 
-### 3. Calcular Quanto uma Porcentagem Representa de um Total
+---
 
-**Fórmula:**  
-`parte = (total * porcentagem) / 100`  
-**Exemplo:**  
-`25% de 200 = 50`
+## 🔐 Gerador de Senhas Seguras
 
-### 4. Calcular a Representação Percentual de uma Parte
+Gera senhas aleatórias com:
 
-**Fórmula:**  
-`porcentagem = (parte / total) * 100`  
-**Exemplo:**  
-`50 de 200 = 25%`
+- Letras maiúsculas e minúsculas  
+- Números  
+- Símbolos  
+- Comprimento personalizável  
 
-### 5. Determinar a Porcentagem de Desconto
-
-**Fórmula:**  
-`desconto = ((valorOriginal - valorComDesconto) / valorOriginal) * 100`  
-**Exemplo:**  
-`Original 100, com desconto 80 = 20%`
-
-### 6. Variação Percentual (Delta)
-
-**Fórmula:**  
-`diferenca = ((valorFinal - valorInicial) / valorInicial) * 100`  
-**Exemplo:**  
-`De 100 para 120 = 20%`
-
-### 7. Encontrar o Valor Original Antes de um Desconto
-
-**Fórmula:**  
-`valorOriginal = valorComDesconto / (1 - (desconto / 100))`  
-**Exemplo:**  
-`80 com 20% de desconto, original = 100`
-
-### 8. Regra de Três Simples
-
-**Fórmula:**  
-`r2 = (b * r1) / a`  
-**Exemplo:**  
-`Se a = 5, b = 10, r1 = 15, então r2 = 30`
-
-### 9. Gerador de Senha
-
-**Descrição:**  
-Gera senhas seguras com opções de caracteres (maiúsculas, minúsculas, números, símbolos) e tamanho definido.
+> Exemplo: `"Kj#9mPx$2nLq"` (12 caracteres com todos os tipos ativados)
 
 **Regras:**
 
-- Pelo menos um tipo de caractere deve ser selecionado.
-- O tamanho mínimo da senha deve suportar os tipos escolhidos.
-
-**Exemplo:**  
-`"Kj#9mPx$2nLq"` (12 caracteres, todos os tipos)
+- Pelo menos um tipo de caractere deve ser selecionado
+- O tamanho deve suportar os tipos escolhidos
 
 ---
 
-## ▶Como Executar o Projeto
+## 🚀 Como Executar
 
-### Requisitos
+### Pré-requisitos
 
-- Java Development Kit (JDK) instalado (versão 8 ou superior)
-- Um ambiente de desenvolvimento (como **Eclipse** ou **IntelliJ IDEA**) ou o compilador Java via linha de comando
+- JDK 8 ou superior
+- IDE Java (Eclipse, IntelliJ) ou terminal com `javac`
 
-### Passos
+### Passos para execução:
 
 ```bash
 # Clone o repositório
@@ -150,16 +108,22 @@ cd unesc-math-java-project
 # Compile os arquivos
 javac view/mathView.java utils/mathUtils.java utils/MathUtilsTest.java
 
-# Execute o programa
+# Execute a aplicação
 java view.mathView
 
-# Execute os testes
+# (Opcional) Execute os testes
 java utils.MathUtilsTest
 ```
 
 ---
 
-## Contato
+## 👤 Autor
 
-Para mais informações ou dúvidas, entre em contato comigo pelo meu [LinkedIn](https://www.linkedin.com/in/cmiguelwm/).  
-Até mais! 👋
+Desenvolvido por [Carlos Miguel Webber Miguel](https://www.linkedin.com/in/cmiguelwm/)  
+Entre em contato para dúvidas, sugestões ou colaborações!
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a licença [MIT](LICENSE).
