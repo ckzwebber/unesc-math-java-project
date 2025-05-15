@@ -62,7 +62,7 @@ public class mathUtils {
         if (includeSpecialChars) typesSelected++;
     
         if (length < typesSelected) {
-            throw new IllegalArgumentException("O comprimento da senha deve ser pelo menos " + typesSelected);
+            throw new IllegalArgumentException("Tamanho de pelo menos " + typesSelected);
         }
         
         Random random = new Random();

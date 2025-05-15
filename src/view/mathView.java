@@ -113,6 +113,7 @@ public class mathView extends JFrame {
         };
         txfRuleOfThreeA.getDocument().addDocumentListener(ruleOfThreeListener);
         txfRuleOfThreeB.getDocument().addDocumentListener(ruleOfThreeListener);
+        txfRuleOfThreeR1.getDocument().addDocumentListener(ruleOfThreeListener);
     }
 
     private void applyDiscount() {
@@ -121,6 +122,11 @@ public class mathView extends JFrame {
         try {
             double value = Double.parseDouble(strValue);
             double discount = Double.parseDouble(strDiscount);
+
+           if(value > 999999999 || discount > 999999999) {
+                txfDiscountResult.setText("Valor muito alto!");
+                return;
+            }
 
             double result = mathUtils.applyDiscount(value, discount);
             txfDiscountResult.setText(String.format("%.2f", result));
@@ -135,6 +141,12 @@ public class mathView extends JFrame {
         try {
             double value = Double.parseDouble(strValue);
             double increase = Double.parseDouble(increaseStr);
+
+            if(value > 999999999 || increase > 999999999) {
+                txfIncreaseResult.setText("Valor muito alto!");
+                return;
+            }
+
             double result = mathUtils.applyIncrease(value, increase);
             txfIncreaseResult.setText(String.format("%.2f", result));
         } catch (NumberFormatException ex) {
@@ -148,6 +160,12 @@ public class mathView extends JFrame {
         try {
             double value = Double.parseDouble(strValue);
             double percentage = Double.parseDouble(strPercentage);
+
+            if(value > 999999999 || percentage > 999999999) {
+                txfSamplingResult.setText("Valor muito alto!");
+                return;
+            }
+
             double result = mathUtils.calculatePercentageOfTotal(value, percentage);
             txfSamplingResult.setText(String.format("%.2f", result));
         } catch (NumberFormatException ex) {
@@ -161,6 +179,12 @@ public class mathView extends JFrame {
         try {
             double value = Double.parseDouble(strValue);
             double part = Double.parseDouble(strPart);
+
+            if(value > 999999999 || part > 999999999) {
+                txfSamplingResult2.setText("Valor muito alto!");
+                return;
+            }
+
             double result = mathUtils.calculatePercentageRepresentation(value, part);
             txfSamplingResult2.setText(String.format("%.2f", result));
         } catch (NumberFormatException ex) {
@@ -174,6 +198,12 @@ public class mathView extends JFrame {
         try {
             double originalValue = Double.parseDouble(strOriginalValue);
             double discountedValue = Double.parseDouble(strDiscountedValue);
+
+            if(originalValue > 999999999 || discountedValue > 999999999) {
+                txfWhichDiscountResult.setText("Valor muito alto!");
+                return;
+            }
+
             double result = mathUtils.calculateDiscountPercentage(originalValue, discountedValue);
             txfWhichDiscountResult.setText(String.format("%.2f", result));
         } catch (NumberFormatException ex) {
@@ -187,6 +217,12 @@ public class mathView extends JFrame {
         try {
             double initialValue = Double.parseDouble(strInitialValue);
             double finalValue = Double.parseDouble(strFinalValue);
+
+            if(initialValue > 999999999 || finalValue > 999999999) {
+                txfDeltaVariationResult.setText("Valor muito alto!");
+                return;
+            }
+
             double result = mathUtils.calculatePercentageDifference(initialValue, finalValue);
             txfDeltaVariationResult.setText(String.format("%.2f", result));
         } catch (NumberFormatException ex) {
@@ -200,6 +236,12 @@ public class mathView extends JFrame {
         try {
             double finalValue = Double.parseDouble(strFinalValue);
             double discountPercentage = Double.parseDouble(strDiscountPercentage);
+
+            if(finalValue > 999999999 || discountPercentage > 999999999) {
+                txfOriginalValueResult.setText("Valor muito alto!");
+                return;
+            }
+
             double result = mathUtils.calculateOriginalValue(finalValue, discountPercentage);
             txfOriginalValueResult.setText(String.format("%.2f", result));
         } catch (NumberFormatException ex) {
@@ -215,6 +257,12 @@ public class mathView extends JFrame {
             double a = Double.parseDouble(strA);
             double b = Double.parseDouble(strB);
             double r1 = Double.parseDouble(strR1);
+
+            if(a > 999999999 || b > 999999999 || r1 > 999999999) {
+                txfRuleOfThreeR2.setText("Valor muito alto!");
+                return;
+            }
+
             double result = mathUtils.ruleOfThree(a, b, r1);
             txfRuleOfThreeR2.setText(String.format("%.2f", result));
         } catch (NumberFormatException ex) {
